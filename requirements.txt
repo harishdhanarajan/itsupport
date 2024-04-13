@@ -4,3 +4,4 @@ typing
 pandas
 openpyxl
 sentence_transformers
+scikit-learn
