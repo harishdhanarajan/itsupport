@@ -2,8 +2,8 @@ import streamlit as st
 import state
 import hydralit_components as hc
 import os
-from pages_views.howto import HowToPage
-from pages_views.itsupport import ITSupport
+from page_views.howto import HowToPage
+from page_views.itsupport import ITSupport
 
 st.set_page_config(
 			page_title = "IT Assist",
