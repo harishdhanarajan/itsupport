@@ -2,7 +2,8 @@ import os
 import pandas as pd
 import streamlit as st
 from page_views.abstract_page import AbstractContentPage
-
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 class ITSupport():
     def __init__(self,page_id: int):
         super().__init__()
