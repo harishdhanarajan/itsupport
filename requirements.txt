@@ -3,3 +3,4 @@ hydralit_components
 typing
 pandas
 openpyxl
+sentence_transformers
