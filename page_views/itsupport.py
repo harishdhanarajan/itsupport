@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
-from pages_views.abstract_page import AbstractContentPage
+from page_views.abstract_page import AbstractContentPage
 
 class ITSupport():
     def __init__(self,page_id: int):
