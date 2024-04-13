@@ -2,3 +2,4 @@ streamlit
 hydralit_components
 typing
 pandas
+openpyxl
