@@ -13,7 +13,7 @@ class ITSupport():
             self._content_placeholder = st.empty()
     def display_page(self):
         st.markdown("<p style = 'text-align:center;'> Please use the below search bar for your issues - Presented by BNYM. </p>", unsafe_allow_html = True)
-        col1, col2 = st.beta_columns([3, 1])
+        col1, col2 = st.columns([3, 1])
         with col1:
             user_query = st.text_input("", value = "")
             links = pd.read_excel("links.xlsx")
