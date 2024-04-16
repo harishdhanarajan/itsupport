@@ -13,35 +13,24 @@ class ITSupport():
             self._content_placeholder = st.empty()
     def display_page(self):
         st.markdown("<p style = 'text-align:center;'> Please use the below search bar for your issues - Presented by BNYM. </p>", unsafe_allow_html = True)
-        col1,col2,col3 = st.columns([1, 3, 1])
-        with col2:
-            st.markdown(
-                """
-                <style>
-                /* Style the input field */
-                .stTextInput>div>div>div>input {
-                    border: 2px solid #999999 !important;
-                    border-radius: 5px !important;
-                    padding: 8px !important;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-            user_query = st.text_input("", value = "")
-            links = pd.read_excel("links.xlsx")
-            top_n=5
-            model = SentenceTransformer('bert-base-nli-mean-tokens')
-            embeddings = model.encode(links['Description'].tolist())
-            query_embedding = model.encode([user_query])[0]
-            similarities = cosine_similarity([query_embedding], embeddings)[0]
-            indices = similarities.argsort()[-top_n:][::-1]
-            relevant_results = []
+        
+        user_query = st.text_input("", value = "")
+        links = pd.read_excel("links.xlsx")
+        top_n=5
+        threshold = 0.6
+        model = SentenceTransformer('bert-base-nli-mean-tokens')
+        embeddings = model.encode(links['Description'].tolist())
+        query_embedding = model.encode([user_query])[0]
+        similarities = cosine_similarity([query_embedding], embeddings)[0]
+        indices = similarities.argsort()[-top_n:][::-1]
+        relevant_results = []
             
-            for idx, similarity in enumerate(similarities):
+        for idx, similarity in enumerate(similarities):
+            if similarity > threshold:
                 if any(keyword.lower() in links.iloc[idx]['Description'].lower() for keyword in user_query.split()):
                     relevant_results.append(links.iloc[idx])
         results = pd.DataFrame(relevant_results)    
+        
         if results.empty:
             st.write("---")
         else:
