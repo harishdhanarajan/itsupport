@@ -14,8 +14,8 @@ st.markdown("<h1 style='text-align: center; background-color: #000045; color: #e
 st.markdown("<h4 style='text-align: center; background-color: #000045; color: #ece5f6'>Access and Technology Hub for BNYM</h4>", unsafe_allow_html = True)
 
 menu_data = [
-		{'id': 1, 'label': "How To", 'key' : "md_how_to", 'icon' : "fa fa-home"},
-		{'id': 2, 'label': "IT Support", 'key' :"md_it_support"},		
+		{'id': 2, 'label': "IT Support", 'key' :"md_it_support"},
+		{'id': 1, 'label': "How To", 'key' : "md_how_to", 'icon' : "fa fa-home"},		
 		{'id': 3, 'label': "Feedback Form", 'key' : "md_feedback"}
 ]
 
