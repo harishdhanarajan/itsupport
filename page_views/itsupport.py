@@ -32,7 +32,7 @@ class ITSupport():
         results = pd.DataFrame(relevant_results)    
         
         if results.empty:
-            st.write("---")
+            print('No Valid Result')
         else:
             N_cards_per_row = 2
             if user_query:
