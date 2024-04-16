@@ -15,6 +15,19 @@ class ITSupport():
         st.markdown("<p style = 'text-align:center;'> Please use the below search bar for your issues - Presented by BNYM. </p>", unsafe_allow_html = True)
         col1,col2,col3 = st.columns([1, 3, 1])
         with col2:
+            st.markdown(
+                """
+                <style>
+                /* Style the input field */
+                .stTextInput>div>div>div>input {
+                    border: 2px solid #999999 !important;
+                    border-radius: 5px !important;
+                    padding: 8px !important;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
             user_query = st.text_input("", value = "")
             links = pd.read_excel("links.xlsx")
             top_n=5
