@@ -27,7 +27,7 @@ class ITSupport():
         for idx, similarity in enumerate(similarities):
             if similarity > threshold:
                 if any(keyword.lower() in links.iloc[idx]['Description'].lower() for keyword in user_query.split()):
-                relevant_results.append(links.iloc[idx])
+                    relevant_results.append(links.iloc[idx])
                 
         results = pd.DataFrame(relevant_results)
         
