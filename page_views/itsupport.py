@@ -31,7 +31,7 @@ class ITSupport():
             user_query = st.text_input("", value = "")
             links = pd.read_excel("links.xlsx")
             top_n=5
-            threshold = 0.6
+            threshold = 0.5
             model = SentenceTransformer('bert-base-nli-mean-tokens')
             embeddings = model.encode(links['Description'].tolist())
             query_embedding = model.encode([user_query])[0]
