@@ -43,7 +43,6 @@ class ITSupport():
                         cols= st.columns(N_cards_per_row, gap = "large")
                         
                     with cols[n_row%N_cards_per_row]:
-                        st.markdown("---")
                         st.markdown(f"**{row['Description'].strip()}**")
                         st.markdown(f"**{row['Related To'].strip()}**")
                         st.markdown(f"**{row['Link']}**")
