@@ -33,7 +33,6 @@ class ITSupport():
         results = pd.DataFrame(relevant_results)    
         if results.empty:
             st.write("---")
-            st.write('No Relevant Topics to Display - Please search again!')
         else:
             N_cards_per_row = 2
             if user_query:
