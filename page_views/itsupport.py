@@ -31,7 +31,6 @@ class ITSupport():
             user_query = st.text_input("", value = "")
             links = pd.read_excel("links.xlsx")
             top_n=5
-            threshold = 0.5
             model = SentenceTransformer('bert-base-nli-mean-tokens')
             embeddings = model.encode(links['Description'].tolist())
             query_embedding = model.encode([user_query])[0]
@@ -40,9 +39,8 @@ class ITSupport():
             relevant_results = []
             
             for idx, similarity in enumerate(similarities):
-                if similarity > threshold:
-                    if any(keyword.lower() in links.iloc[idx]['Description'].lower() for keyword in user_query.split()):
-                        relevant_results.append(links.iloc[idx])
+                if any(keyword.lower() in links.iloc[idx]['Description'].lower() for keyword in user_query.split()):
+                    relevant_results.append(links.iloc[idx])
         results = pd.DataFrame(relevant_results)    
         if results.empty:
             st.write("---")
