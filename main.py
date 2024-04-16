@@ -10,8 +10,8 @@ st.set_page_config(
 			layout = "wide",
 )
 
-st.markdown("<h1 style='text-align: center; background-color: #E2EAF4; color: #E2EAF4'>Welcome to IT Support</h1>", unsafe_allow_html = True)
-st.markdown("<h4 style='text-align: center; background-color: #E2EAF4; color: #E2EAF4'>Access and Technology Hub for BNYM</h4>", unsafe_allow_html = True)
+st.markdown("<h1 style='text-align: center; background-color: #000045; color: #ece5f6'>Welcome to IT Support</h1>", unsafe_allow_html = True)
+st.markdown("<h4 style='text-align: center; background-color: #000045; color: #ece5f6'>Access and Technology Hub for BNYM</h4>", unsafe_allow_html = True)
 
 menu_data = [
 		{'id': 1, 'label': "How To", 'key' : "md_how_to", 'icon' : "fa fa-home"},
